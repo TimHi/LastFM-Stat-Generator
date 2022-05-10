@@ -1,0 +1,2 @@
+class RecentTopAlbum < ApplicationRecord
+end
