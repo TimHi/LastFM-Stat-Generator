@@ -1,3 +1,4 @@
+# typed: true
 class CreateRecentTopAlbums < ActiveRecord::Migration[7.0]
   def change
     create_table :recent_top_albums do |t|

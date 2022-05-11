@@ -1,10 +1,21 @@
 <h1>LastFm</h1>
 
 <h2>Albums<h2>
+ <label for="timespan">Choose a timespan:</label>
+
+<select name="timespan" id="timespan">
+  <option value="7day">Week</option>
+  <option value="1month">One Month</option>
+  <option value="3month">Three Months</option>
+  <option value="6month">Six Months</option>
+  <option value="12month">Twelve Months</option>
+  <option value="overall">All Time</option>
+</select>
+
 <ul>
-  <% @albums.each do |article| %>
-    <li>
-      <%= article %>
-    </li>
+  <% @albums.each do |album| %>
+    <%= image_tag album.cover_small, height: 34, width: 34, alt: 'fun' %>
+    <%= album.rank %> <%= album.artist %> - <%= album.title %> <%= album.playcount %> Plays
+    <hr>
   <% end %>
 </ul>
