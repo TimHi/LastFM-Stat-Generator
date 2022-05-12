@@ -12,6 +12,8 @@
   <option value="overall">All Time</option>
 </select>
 
+<td><%= button_to 'Start', start_button_clicked_path %></td>
+
 <ul>
   <% @albums.each do |album| %>
     <%= image_tag album.cover_small, height: 34, width: 34, alt: 'fun' %>

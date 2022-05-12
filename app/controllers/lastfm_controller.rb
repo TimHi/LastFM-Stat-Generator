@@ -5,6 +5,12 @@
 class LastfmController < ApplicationController
   include LastFmModule
   def index
-    @albums = fetch_last_fm_albums
+    @albums = []
+  end
+
+  def start_button_clicked
+    puts 'Getting Albums...'
+    @albums = fetch_last_fm_albums('7day')
+    puts 'Focking UI updated?'
   end
 end

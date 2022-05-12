@@ -3,14 +3,14 @@
 
 # Module to interact with the last fm api
 module LastFmModule
-  def fetch_last_fm_albums
-    recent_albums = fetch_data_from_api
+  def fetch_last_fm_albums(timespan)
+    recent_albums = fetch_data_from_api(timespan)
     create_recent_album_model(recent_albums)
   end
 
-  def fetch_data_from_api
+  def fetch_data_from_api(timespan)
     lastfm = Lastfm.new(ENV['lastfm_api_key'], ENV['lastfm_secret'])
-    lastfm.user.get_top_albums(user: 'th-p', period: '7day')
+    lastfm.user.get_top_albums(user: 'th-p', period: timespan)
   end
 
   def create_recent_album_model(recent_albums)
